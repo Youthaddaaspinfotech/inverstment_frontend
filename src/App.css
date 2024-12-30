@@ -1,0 +1,151 @@
+* {
+    margin: 0px;
+    padding: 0px;
+
+ 
+}
+
+body,
+html {
+    height: 100%;
+    width: 100%;
+    background-color: #f2f5f9; 
+
+overflow-x: hidden;
+
+}
+
+.textColor {
+    color: #fff;
+}
+
+/* navbar start */
+.navbarbg{
+    background-color: #4590FE;
+}
+.logoImg{
+    width: 64px;
+}
+.dropdownButton{
+   
+    
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: #fff;
+    border-radius: 20px;
+    
+   
+}
+.navlink{
+    
+    gap:10px;
+    font-weight: 700;
+    
+}
+/* navbar end */
+
+/* body section start  */
+.searchButton{
+    border-radius: 30px;
+  
+    
+
+}
+.cartFont{
+    color:#888888;
+}
+.cardblue{
+    color: #4691FF;
+}
+.cardImg{
+    width: 100%;
+    height: 250px;
+}
+
+.cardContainer {
+    position: relative; /* Set the container as the relative context */
+  }
+  
+  .cardImg {
+    width: 100%; /* Ensure the image is responsive */
+    display: block;
+  }
+  
+  .btn21 {
+    position: absolute; /* Position the button relative to the container */
+    bottom: 10px; /* Place it near the bottom of the image */
+    left: 20px; /* Position it on the left */
+    background-color: white; /* Optional: Add a semi-transparent background */
+    color: black; /* Optional: Button text color */
+    padding: 10px 20px; /* Optional: Padding for the button */
+    border-radius: 35px; /* Optional: Rounded corners */
+    text-align: center;
+    cursor: pointer;
+
+  }
+  .cardbtn{
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  
+/* body section end */
+/* footer start */
+
+.footerBox{
+    margin-top: 30px;
+    background-color: #4590FE;
+   
+  
+  
+}
+.footer2Box{
+    background-color: #4590FE;
+    border-top:2px solid white ;
+    padding: 20px;
+   
+}
+.footerheading{
+font-weight: 600;
+ border-bottom: 1px solid white;
+ width: 55%;
+
+
+
+}
+/* footer end */
+
+/* banner section start */
+.banner{
+    position: relative;
+   
+}
+.bannerImg{
+    width: 100%;
+  
+}
+  
+.textOverlay {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    z-index: 1;
+    padding: 10px;
+  
+    
+  }
+  .textOverlay h1 {
+    margin: 0;
+    font-size: 2.5rem; /* Adjust font size for better visibility */
+  }
+  
+  .textOverlay p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+
+  
+
+/* banner section end */
