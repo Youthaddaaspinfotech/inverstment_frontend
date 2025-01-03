@@ -8,10 +8,10 @@ const Footer = () => {
   return (
     <>
       <>
-        <Row className='footerBox p-3 textColor'>
+        <Row className='footerBox  textColor p-5'>
 
           {/* first col start */}
-          <Col lg={2} md={12} sm={12} xs={12} className='g-2 '>
+          <Col lg={2} md={12} sm={12} xs={12} className=' '>
             <Row>
               <Col><img src={logo} className='logoImg mb-2' /></Col>
             </Row>
@@ -31,7 +31,7 @@ const Footer = () => {
           </Col>
           {/* first col end */}
           {/* secound col start */}
-          <Col lg={2} md={12} sm={12} xs={12} className='g-3'>
+          <Col lg={2} md={12} sm={12} xs={12} className=''>
             <Row>
               <Col><h5 className='footerheading mb-3'>Our Solution</h5></Col>
             </Row>
@@ -53,9 +53,9 @@ const Footer = () => {
           </Col>
           {/* secound col end */}
           {/* third col start */}
-          <Col lg={2} md={12} sm={12} xs={12} className='g-3'>
+          <Col lg={2} md={12} sm={12} xs={12} className=''>
             <Row>
-              <Col><h5 className='footerheading mb-3'>Usecase</h5></Col>
+              <Col><h5 className='footerheading'>Usecase</h5></Col>
             </Row>
             <Row>
               <Col><p>KYC</p></Col>
@@ -82,7 +82,7 @@ const Footer = () => {
 
           {/* third col end */}
           {/* four col start */}
-          <Col lg={2} md={12} sm={12} xs={12} className='g-3'>
+          <Col lg={2} md={12} sm={12} xs={12} className=''>
 
             <Row>
               <Col><h5 className='footerheading mb-3'>Industrial</h5></Col>
@@ -114,7 +114,7 @@ const Footer = () => {
           </Col>
           {/* four col end */}
           {/* five col start */}
-          <Col lg={2} md={12} sm={12} xs={12} className='g-3'>
+          <Col lg={2} md={12} sm={12} xs={12} className=''>
             <Row>
               <Col><h5 className='footerheading mb-3'>Our Company</h5></Col>
             </Row>
@@ -134,7 +134,7 @@ const Footer = () => {
           </Col>
           {/* five col end */}
           {/* six col start */}
-          <Col lg={2} md={12} sm={12} xs={12} className='g-3'>
+          <Col lg={2} md={12} sm={12} xs={12} className=''>
             <Row>
               <Col><h5 className='footerheading mb-3'>Resource</h5></Col>
             </Row>
@@ -153,18 +153,22 @@ const Footer = () => {
 
           </Col>
           {/* six col end */}
+  {/* secound row start */}
 
-
-        </Row>
-
-        {/* secound row start */}
-        <Row className='textColor footer2Box '>
+ <Col>
+ <Row className='textColor footer2Box d-flex  justify-content-evenly'>
           <Col lg={3} md={3} sm={3} xs={12} className="g-3"><span>Terms of Use</span></Col>
           <Col lg={3} md={3} sm={3} xs={12} className="g-3" ><span>Privacy Policy</span></Col>
-          <Col lg={3} md={3} sm={3} xs={12}className="g-3"  ><span>Responsible Disclosure Policy</span></Col>
-          <Col lg={3} md={3} sm={3} xs={12}  className="g-3"><span>Sitemap</span></Col>
+          <Col lg={3} md={3} sm={3} xs={12} className="g-3"  ><span>Responsible Disclosure Policy</span></Col>
+          <Col lg={3} md={3} sm={3} xs={12} className="g-3"><span>Sitemap</span></Col>
         </Row>
-        {/* secound row end */}
+ </Col>
+    {/* secound row end */}
+        </Row>
+
+       
+      
+    
 
       </>
 

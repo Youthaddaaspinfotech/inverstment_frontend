@@ -20,12 +20,12 @@ const Navbarr = () => {
             navbarScroll  
           >
             
-            <Nav.Link href="#action1" className='textColor'>Home</Nav.Link>
-            <Nav.Link href="#action1" className='textColor'>About</Nav.Link>
-            <Nav.Link href="#action1"className='textColor'>Service</Nav.Link>
-            <Nav.Link href="#action1"className='textColor'>Project</Nav.Link>
-            <Nav.Link href="#action1"className='textColor'>Contact</Nav.Link>
-            <Nav.Link href="#action2"className='textColor'>Link</Nav.Link>
+            <Nav.Link href="/" className='textColor'>Home</Nav.Link>
+            <Nav.Link href="#" className='textColor'>About</Nav.Link>
+          
+            <Nav.Link href="Property_portfolio"className='textColor'>Portfolio</Nav.Link>
+            <Nav.Link href="get_in_touch"className='textColor'>Contact</Nav.Link>
+          
            
           </Nav>
               <Nav> 

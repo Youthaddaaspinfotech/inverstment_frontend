@@ -21,7 +21,7 @@ overflow-x: hidden;
 
 /* navbar start */
 .navbarbg{
-    background-color: #4590FE;
+    background-color: #4590FE ;
 }
 .logoImg{
     width: 64px;
@@ -53,23 +53,34 @@ overflow-x: hidden;
 }
 .cartFont{
     color:#888888;
+    font-size: small;
+    margin-left: 5px;
 }
 .cardblue{
-    color: #4691FF;
+    color:  #4590FE ;
+    font-size: small;
 }
-.cardImg{
-    width: 100%;
-    height: 250px;
-}
+
 
 .cardContainer {
     position: relative; /* Set the container as the relative context */
   }
   
   .cardImg {
+    height: 250px;
     width: 100%; /* Ensure the image is responsive */
     display: block;
+    background-color: white;
+    border-top-left-radius: 20px; /* Top-left corner */
+    border-top-right-radius: 20px; /* Top-right corner */
+    border-top: 1px solid  #4590FE ;
   }
+  .cardBody {
+    border: none !important; /* Ensure it overrides any existing border */
+    border-bottom-left-radius: 20px; /* Rounded bottom-left corner */
+  border-bottom-right-radius: 20px; /* Rounded bottom-right corner */
+  }
+  
   
   .btn21 {
     position: absolute; /* Position the button relative to the container */
@@ -86,22 +97,33 @@ overflow-x: hidden;
   .cardbtn{
     padding-left: 40px;
     padding-right: 40px;
+   
   }
-  
+  .investbtn {
+    background-color: #4590FE;
+  }
+  .progressbar{
+    background-color: #a0dba0;
+    height: 8px;
+    
+  }
+  .progressbarfont{
+    font-size: small;
+  }
 /* body section end */
 /* footer start */
 
 .footerBox{
     margin-top: 30px;
     background-color: #4590FE;
-   
+  
   
   
 }
 .footer2Box{
-    background-color: #4590FE;
+    background-color: #4590FE ;
     border-top:2px solid white ;
-    padding: 20px;
+    
    
 }
 .footerheading{
@@ -146,6 +168,153 @@ font-weight: 600;
     margin-top: 10px;
   }
 
-  
+  @media (max-width: 768px) {
+    .bannerImg {
+        height: auto; /* Allow the image to adjust naturally */
+    }
+    .textOverlay h1 {
+        font-size: 2rem; /* Reduce font size for better fit */
+    }
+    .textOverlay p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .bannerImg {
+        height: auto; /* Allow the image to adjust naturally */
+    }
+    .textOverlay h1 {
+        font-size: 2rem; /* Reduce font size for better fit */
+    }
+    .textOverlay p {
+        font-size: 1rem;
+    }
+}
+
+/* Media Query for small screens (mobile phones) */
+@media (max-width: 600px) {
+    .bannerImg {
+        height: auto; /* Ensure the image scales naturally */
+    }
+    .textOverlay {
+        top: 30%; /* Adjust overlay positioning */
+        left: 50%;
+        transform: translate(-50%, -30%);
+    }
+    .textOverlay h1 {
+        font-size: 1.4rem; /* Smaller font size */
+        line-height: 1.4;
+    }
+    .textOverlay p {
+        font-size: 0.9rem; /* Smaller font size for better fit */
+    }
+}
+
+/* Extra Small Screens */
+@media (max-width: 400px) {
+    .textOverlay {
+        top: 35%; /* Adjust overlay positioning */
+        padding: 5px; /* Reduce padding */
+    }
+    .textOverlay h1 {
+        font-size: 1rem;
+    }
+    .textOverlay p {
+        font-size: 0.8rem;
+    }
+}
+
+/* For Ultra Small Screens (Less than 310px) */
+@media (max-width: 310px) {
+    .textOverlay {
+        top: 45%;
+        padding: 5px;
+    }
+    .textOverlay h1 {
+        font-size: 1rem; /* Smallest font size */
+    }
+    .textOverlay p {
+        font-size: 0.7rem;
+    }
+}
+
 
 /* banner section end */
+
+/* get in touch start */
+.grtheading{
+    color: #4590FE;
+}
+.getbody{
+    border-radius: 20px;
+    border-top: 1px solid  #4590FE ;
+   
+}
+.getdata{
+ border: 2px solid;
+}
+.getinpbox{
+    border: 1px solid ;
+}
+.getbtn{
+    background-color: #4590FE ;
+   padding-left: 20px;
+   padding-right: 20px;
+}
+
+
+/* get in touch end */
+/* detail page start */
+.detailimg{
+    height: auto;
+    width: 100%;
+}
+.cardborder{
+    border-radius: 15px;
+}
+
+.cardborder{
+    border-top: 2px solid  #4590FE;
+    border-radius: 20px;
+ 
+}
+
+
+  .fontsize{
+ font-size: 12px;
+ font-weight: 500;
+  }
+.greenbtn{
+    background-color: #57BF57 !important;
+}
+  
+.textblue{
+    color:#4590FE;
+    font-size: 12px;
+    font-weight: 500;
+}
+/* detail page end */
+/* portfolio section start */
+.portfolio_heading {
+ 
+    border-bottom: 1px solid black;
+    display: inline-block; /* Makes the border only as wide as the text */
+    margin: 0 auto; /* Centers the text and border */
+  }
+ 
+  .underline-container {
+    display: inline-block;
+    border-bottom: 2px solid black;
+    padding-bottom: 2px; /* Optional, adds space between text and the underline */
+    padding-top: 10px;
+  }
+  
+  .underline-container span {
+    padding: 0px 15px; /* Adjust this to control spacing between words */
+    font-size: x-large;
+   
+
+  }
+
+/* portfolio section end */
