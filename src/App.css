@@ -2,16 +2,16 @@
     margin: 0px;
     padding: 0px;
 
- 
+
 }
 
 body,
 html {
     height: 100%;
     width: 100%;
-    background-color: #f2f5f9; 
+    background-color: #f2f5f9;
 
-overflow-x: hidden;
+    overflow-x: hidden;
 
 }
 
@@ -20,132 +20,162 @@ overflow-x: hidden;
 }
 
 /* navbar start */
-.navbarbg{
-    background-color: #4590FE ;
+.navbarbg {
+    background-color: #4590FE;
 }
-.logoImg{
+
+.logoImg {
     width: 64px;
 }
-.dropdownButton{
-   
-    
+
+.dropdownButton {
+
+
     padding-left: 30px;
     padding-right: 30px;
     background-color: #fff;
     border-radius: 20px;
-    
-   
+
+
 }
-.navlink{
-    
-    gap:10px;
+
+.navlink {
+
+    gap: 10px;
     font-weight: 700;
-    
+
 }
+
 /* navbar end */
 
 /* body section start  */
-.searchButton{
+.searchButton {
     border-radius: 30px;
-  
-    
+
+
 
 }
-.cartFont{
-    color:#888888;
+
+.cartFont {
+    color: #888888;
     font-size: small;
     margin-left: 5px;
 }
-.cardblue{
-    color:  #4590FE ;
+
+.cardblue {
+    color: #4590FE;
     font-size: small;
 }
 
 
 .cardContainer {
-    position: relative; /* Set the container as the relative context */
-  }
-  
-  .cardImg {
+    position: relative;
+    /* Set the container as the relative context */
+}
+
+.cardImg {
     height: 250px;
-    width: 100%; /* Ensure the image is responsive */
+    width: 100%;
+    /* Ensure the image is responsive */
     display: block;
     background-color: white;
-    border-top-left-radius: 20px; /* Top-left corner */
-    border-top-right-radius: 20px; /* Top-right corner */
-    border-top: 1px solid  #4590FE ;
-  }
-  .cardBody {
-    border: none !important; /* Ensure it overrides any existing border */
-    border-bottom-left-radius: 20px; /* Rounded bottom-left corner */
-  border-bottom-right-radius: 20px; /* Rounded bottom-right corner */
-  }
-  
-  
-  .btn21 {
-    position: absolute; /* Position the button relative to the container */
-    bottom: 10px; /* Place it near the bottom of the image */
-    left: 20px; /* Position it on the left */
-    background-color: white; /* Optional: Add a semi-transparent background */
-    color: black; /* Optional: Button text color */
-    padding: 10px 20px; /* Optional: Padding for the button */
-    border-radius: 35px; /* Optional: Rounded corners */
+    border-top-left-radius: 20px;
+    /* Top-left corner */
+    border-top-right-radius: 20px;
+    /* Top-right corner */
+    border-top: 1px solid #4590FE;
+}
+
+.cardBody {
+    border: none !important;
+    /* Ensure it overrides any existing border */
+    border-bottom-left-radius: 20px;
+    /* Rounded bottom-left corner */
+    border-bottom-right-radius: 20px;
+    /* Rounded bottom-right corner */
+}
+
+
+.btn21 {
+    position: absolute;
+    /* Position the button relative to the container */
+    bottom: 10px;
+    /* Place it near the bottom of the image */
+    left: 20px;
+    /* Position it on the left */
+    background-color: white;
+    /* Optional: Add a semi-transparent background */
+    color: black;
+    /* Optional: Button text color */
+    padding: 10px 20px;
+    /* Optional: Padding for the button */
+    border-radius: 35px;
+    /* Optional: Rounded corners */
     text-align: center;
     cursor: pointer;
 
-  }
-  .cardbtn{
+}
+
+.cardbtn {
     padding-left: 40px;
     padding-right: 40px;
-   
-  }
-  .investbtn {
+
+}
+
+.investbtn {
     background-color: #4590FE;
-  }
-  .progressbar{
+}
+
+.progressbar {
     background-color: #a0dba0;
     height: 8px;
-    
-  }
-  .progressbarfont{
+
+}
+
+.progressbarfont {
     font-size: small;
-  }
+}
+
 /* body section end */
 /* footer start */
 
-.footerBox{
+.footerBox {
     margin-top: 30px;
     background-color: #4590FE;
-  
-  
-  
-}
-.footer2Box{
-    background-color: #4590FE ;
-    border-top:2px solid white ;
-    
-   
-}
-.footerheading{
-font-weight: 600;
- border-bottom: 1px solid white;
- width: 55%;
 
 
 
 }
+
+.footer2Box {
+    background-color: #4590FE;
+    border-top: 2px solid white;
+
+
+}
+
+.footerheading {
+    font-weight: 600;
+    border-bottom: 1px solid white;
+    width: 55%;
+
+
+
+}
+
 /* footer end */
 
 /* banner section start */
-.banner{
+.banner {
     position: relative;
-   
+
 }
-.bannerImg{
+
+.bannerImg {
     width: 100%;
-  
+
 }
-  
+
 .textOverlay {
     position: absolute;
     top: 25%;
@@ -155,26 +185,32 @@ font-weight: 600;
     text-align: center;
     z-index: 1;
     padding: 10px;
-  
-    
-  }
-  .textOverlay h1 {
+
+
+}
+
+.textOverlay h1 {
     margin: 0;
-    font-size: 2.5rem; /* Adjust font size for better visibility */
-  }
-  
-  .textOverlay p {
+    font-size: 2.5rem;
+    /* Adjust font size for better visibility */
+}
+
+.textOverlay p {
     font-size: 1.2rem;
     margin-top: 10px;
-  }
+}
 
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
     .bannerImg {
-        height: auto; /* Allow the image to adjust naturally */
+        height: auto;
+        /* Allow the image to adjust naturally */
     }
+
     .textOverlay h1 {
-        font-size: 2rem; /* Reduce font size for better fit */
+        font-size: 2rem;
+        /* Reduce font size for better fit */
     }
+
     .textOverlay p {
         font-size: 1rem;
     }
@@ -182,11 +218,15 @@ font-weight: 600;
 
 @media (max-width: 768px) {
     .bannerImg {
-        height: auto; /* Allow the image to adjust naturally */
+        height: auto;
+        /* Allow the image to adjust naturally */
     }
+
     .textOverlay h1 {
-        font-size: 2rem; /* Reduce font size for better fit */
+        font-size: 2rem;
+        /* Reduce font size for better fit */
     }
+
     .textOverlay p {
         font-size: 1rem;
     }
@@ -195,31 +235,42 @@ font-weight: 600;
 /* Media Query for small screens (mobile phones) */
 @media (max-width: 600px) {
     .bannerImg {
-        height: auto; /* Ensure the image scales naturally */
+        height: auto;
+        /* Ensure the image scales naturally */
     }
+
     .textOverlay {
-        top: 30%; /* Adjust overlay positioning */
+        top: 30%;
+        /* Adjust overlay positioning */
         left: 50%;
         transform: translate(-50%, -30%);
     }
+
     .textOverlay h1 {
-        font-size: 1.4rem; /* Smaller font size */
+        font-size: 1.4rem;
+        /* Smaller font size */
         line-height: 1.4;
     }
+
     .textOverlay p {
-        font-size: 0.9rem; /* Smaller font size for better fit */
+        font-size: 0.9rem;
+        /* Smaller font size for better fit */
     }
 }
 
 /* Extra Small Screens */
 @media (max-width: 400px) {
     .textOverlay {
-        top: 35%; /* Adjust overlay positioning */
-        padding: 5px; /* Reduce padding */
+        top: 35%;
+        /* Adjust overlay positioning */
+        padding: 5px;
+        /* Reduce padding */
     }
+
     .textOverlay h1 {
         font-size: 1rem;
     }
+
     .textOverlay p {
         font-size: 0.8rem;
     }
@@ -231,9 +282,12 @@ font-weight: 600;
         top: 45%;
         padding: 5px;
     }
+
     .textOverlay h1 {
-        font-size: 1rem; /* Smallest font size */
+        font-size: 1rem;
+        /* Smallest font size */
     }
+
     .textOverlay p {
         font-size: 0.7rem;
     }
@@ -243,78 +297,143 @@ font-weight: 600;
 /* banner section end */
 
 /* get in touch start */
-.grtheading{
+.grtheading {
     color: #4590FE;
 }
-.getbody{
+
+.getbody {
     border-radius: 20px;
-    border-top: 1px solid  #4590FE ;
-   
+    border-top: 1px solid #4590FE;
+
 }
-.getdata{
- border: 2px solid;
+
+.getdata {
+    border: 2px solid;
 }
-.getinpbox{
-    border: 1px solid ;
+
+.getinpbox {
+    border: 1px solid;
 }
-.getbtn{
-    background-color: #4590FE ;
-   padding-left: 20px;
-   padding-right: 20px;
+
+.getbtn {
+    background-color: #4590FE;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 
 /* get in touch end */
 /* detail page start */
-.detailimg{
+.detailimg {
     height: auto;
     width: 100%;
 }
-.cardborder{
+
+.cardborder {
     border-radius: 15px;
 }
 
-.cardborder{
-    border-top: 2px solid  #4590FE;
+.cardborder {
+    border-top: 2px solid #4590FE;
     border-radius: 20px;
- 
+
 }
 
 
-  .fontsize{
- font-size: 12px;
- font-weight: 500;
-  }
-.greenbtn{
-    background-color: #57BF57 !important;
-}
-  
-.textblue{
-    color:#4590FE;
+.fontsize {
     font-size: 12px;
     font-weight: 500;
 }
+
+.greenbtn {
+    background-color: #57BF57 !important;
+}
+
+.textblue {
+    color: #4590FE;
+    font-size: 12px;
+    font-weight: 500;
+}
+
 /* detail page end */
 /* portfolio section start */
 .portfolio_heading {
- 
+
     border-bottom: 1px solid black;
-    display: inline-block; /* Makes the border only as wide as the text */
-    margin: 0 auto; /* Centers the text and border */
-  }
- 
-  .underline-container {
+    display: inline-block;
+    /* Makes the border only as wide as the text */
+    margin: 0 auto;
+    /* Centers the text and border */
+}
+
+.underline-container {
     display: inline-block;
     border-bottom: 2px solid black;
-    padding-bottom: 2px; /* Optional, adds space between text and the underline */
+    padding-bottom: 2px;
+    /* Optional, adds space between text and the underline */
     padding-top: 10px;
-  }
-  
-  .underline-container span {
-    padding: 0px 15px; /* Adjust this to control spacing between words */
-    font-size: x-large;
-   
+}
 
-  }
+.underline-container span {
+    padding: 0px 15px;
+    /* Adjust this to control spacing between words */
+    font-size: x-large;
+
+
+}
 
 /* portfolio section end */
+/* =========================================================================== */
+
+
+.capital-input,
+.tenure-select {
+    width: 100%;
+    /* Default for smaller screens (sm, xs) */
+}
+
+@media (min-width: 768px) and (max-width: 1199.98px) {
+
+    /* For md */
+    .capital-input,
+    .tenure-select {
+        width: 250px;
+    }
+}
+
+@media (min-width: 1200px) {
+
+    /* For lg and larger */
+    .capital-input,
+    .tenure-select {
+        width: 250px;
+    }
+}
+
+
+
+
+.custom-tabs .nav-tabs {
+    border-bottom: none;
+}
+
+.custom-tabs .nav-link {
+    color: #000;
+    font-weight: 400;
+    border: none;
+    padding: 0.5rem 2rem;
+    text-align: center;
+    font-size: 22px;
+}
+
+.custom-tabs .nav-link.active {
+    /* color: #007bff; */
+    font-weight: 400;
+    border-bottom: 3px solid #007bff;
+    background-color: inherit !important;
+    font-size: 22px;
+}
+
+.custom-tabs .nav-link:hover {
+    color: #0056b3;
+}
