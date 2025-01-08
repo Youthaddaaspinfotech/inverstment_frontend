@@ -5,7 +5,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell } from '@fortawesome/free-solid-svg-icons';
 import { faGear} from '@fortawesome/free-solid-svg-icons';
 import { faCircleUser } from '@fortawesome/free-solid-svg-icons';
+
+
+
 const Navbarr = () => {
+
   return (
 <>
   {/* navbar start */}
@@ -20,8 +24,10 @@ const Navbarr = () => {
             navbarScroll  
           >
             
-            <Nav.Link href="/" className='textColor'>Home</Nav.Link>
-            <Nav.Link href="#" className='textColor'>About</Nav.Link>
+            <Nav.Link href="/home" className='textColor'>Home</Nav.Link>
+             
+
+            <Nav.Link href="about" className='textColor'>About</Nav.Link>
           
             <Nav.Link href="Property_portfolio"className='textColor'>Portfolio</Nav.Link>
             <Nav.Link href="get_in_touch"className='textColor'>Contact</Nav.Link>
@@ -30,11 +36,12 @@ const Navbarr = () => {
           </Nav>
               <Nav> 
                 <Row>
-                  <Col lg={6}><NavDropdown title="Language" id="navbarScrollingDropdown" className=' dropdownButton mt-2'>
-                <NavDropdown.Item href="#action1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action2">Another Action</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action3">Something Else</NavDropdown.Item>
+                <Col lg={6}><NavDropdown title="Language" id="navbarScrollingDropdown" className=' dropdownButton mt-2'>
+                <NavDropdown.Item href="#action1">Hindi</NavDropdown.Item>
+                <NavDropdown.Item href="#action2">English</NavDropdown.Item>
+                 
+                
+                
               </NavDropdown></Col>
               <Col lg={1}><Nav.Link href="#notifications" aria-label="Notifications" className='mt-2 me-2'>
                 <FontAwesomeIcon icon={faBell} style={{ color: '#f0f2f5' }}  size="lg" />
