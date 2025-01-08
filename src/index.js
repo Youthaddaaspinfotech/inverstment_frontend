@@ -7,13 +7,15 @@ import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-
+import { GoogleOAuthProvider } from '@react-oauth/google';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+
   <BrowserRouter>
-    <App/>
+  <GoogleOAuthProvider clientId="786218004075-9qgocbuaetdu4r6ubpd8j171prbojgt4.apps.googleusercontent.com"><App/></GoogleOAuthProvider>;
+   
   </BrowserRouter>
 );
 
@@ -21,3 +23,4 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+

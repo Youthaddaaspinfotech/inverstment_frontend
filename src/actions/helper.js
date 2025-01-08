@@ -7,7 +7,7 @@ let resp;
 export const request = (path, data, method) => {
 	try {
 		// let url = `https://bikerentalapi.youthadda.co`;
-		let url = "http://localhost:4000";
+		let url = "https://investmentapi.youthadda.co/";
 
 		var options = {
 			method: method,
