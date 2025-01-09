@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Row, Col, Card, Button, Form, DropdownButton, Dropdown, ProgressBar } from "react-bootstrap"
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import detailImg from "../assets/detail_page/detailImg.jpg"
 import locationImg from "../assets/card/card_icon/location.png";
 import target from "../assets/card/card_icon/target.svg.jpg"
@@ -13,20 +13,63 @@ import unused from "../assets/card/card_icon/unused.png"
 import { useLocation } from 'react-router-dom';
 import { imgPath } from '../actions/constant';
 import { getTenureAction } from '../actions/admin.actions';
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+import { addEditPortfolioAction } from '../actions/admin.actions';
 
 const Pr_detail_page = () => {
   const location = useLocation();
+  let navigate = useNavigate();
   const propertyData = location.state?.propertyData;
+
+
   const [tenureList, setTenureList] = useState([]);
+  const [isDisabled, setDisabled] = useState(false);
+  const [validated, setValidated] = useState(false);
+  const [formData, setFormData] = useState({
+    amount: "",
+    tenureId: "",
+  });
 
   const getTenureData = async () => {
-
     let resp = await getTenureAction({});
-
     if (resp.code === 200) {
       setTenureList(resp.data)
     }
   }
+
+  const handleSubmit = async (event) => {
+    event.preventDefault(); // Prevent default form submission
+    const form = event.currentTarget;
+
+    // Check validity of the form
+    if (form.checkValidity() === false) {
+      event.stopPropagation();
+      setValidated(true);
+    } else {
+      setDisabled(true);
+      const msg = "Property investment success";
+      const postData = new FormData();
+      for (let key in formData) {
+        postData.append(key, formData[key]);
+      }
+      postData.append("propertyId", propertyData._id); // Add property _id
+      postData.append("userId", localStorage.getItem("userLoginId"));
+      const resp = await addEditPortfolioAction(postData);
+      if (resp.code === 200) {
+        toast.success(resp.msg || msg);
+        navigate("/pay_using_details", {
+          state: { amount: formData.amount },
+        });
+      } else {
+        setDisabled(false);
+        toast.error(resp.message || "An error occurred.");
+      }
+    }
+  }
+  const handleChange = (name, event) => {
+    setFormData({ ...formData, [name]: event.target.value });
+  };
   useEffect(() => {
     getTenureData();
   }, [])
@@ -72,7 +115,7 @@ const Pr_detail_page = () => {
                   <Card.Text>
                     Please insert investment amount and toggle with appreciation tenure
                   </Card.Text>
-                  <Form>
+                  <Form noValidate validated={validated} onSubmit={handleSubmit}>
                     <Row className="align-items-center">
                       {/* Capital Section */}
                       <Col lg={9} md={9} sm={12} xs={12} className="mb-3">
@@ -85,8 +128,8 @@ const Pr_detail_page = () => {
                             placeholder="₹ 30,00,000"
                             name="capital"
                             autoComplete="off"
-                            // value={formData.capital ? formData.capital : ""}
-                            // onChange={(e) => handleChange("capital", e)}
+                            value={formData.amount ? formData.amount : ""}
+                            onChange={(e) => handleChange("amount", e)}
                             className="capital-input"
                             required
                           />
@@ -105,8 +148,8 @@ const Pr_detail_page = () => {
                           <Form.Select
                             name="tenure"
                             aria-label="Select tenure"
-                            // value={formData.tenure ? formData.tenure : ""}
-                            // onChange={(e) => handleChange("tenure", e)}
+                            value={formData.tenureId ? formData.tenureId : ""}
+                            onChange={(e) => handleChange("tenureId", e)}
                             required
                           >
                             <option value="">Select Tenure</option>
@@ -120,18 +163,20 @@ const Pr_detail_page = () => {
                         </Form.Group>
                       </Col>
                     </Row>
+                    <div className="d-flex justify-content-center">
+                      <Button
+                        type="submit"
+                        variant="primary"
+                        disabled={isDisabled}
+                      >
+                        Invest Now
+                      </Button>
+                    </div>
                   </Form>
                 </Card.Body>
               </Card>
             </Col>
           </Row>
-
-
-
-
-
-
-
           <Row className='mt-4 '>
             <Col>
               <Card className="cardborder p-3">
@@ -166,9 +211,7 @@ const Pr_detail_page = () => {
                     </Row>
                   </Card.Text>
 
-                  <div className="d-flex justify-content-center">
-                    <Link to="/pay_using_details"><Button variant="primary">Invest Now</Button></Link>
-                  </div>
+
                 </Card.Body>
               </Card>
             </Col>

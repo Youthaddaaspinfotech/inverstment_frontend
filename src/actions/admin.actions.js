@@ -64,6 +64,14 @@ export const getPortfolioAction = (data) => {
     return postRequest('getPortfolio', data).then(res => { return res.data });
 }
 
+export const getUserPortfolioAction = (data) => {
+    return postRequest('getUserPortfolio', data).then(res => { return res.data });
+}
+
+export const addEditPortfolioAction = (data) => {
+    return postRequest('addEditPortfolio', data).then(res => { return res.data });
+}
+
 export const deletePortfolioAction = (data) => {
     return postRequest('deletePortfolio', data).then(res => { return res.data });
 }

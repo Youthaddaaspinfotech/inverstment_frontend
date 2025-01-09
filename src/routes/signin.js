@@ -32,6 +32,7 @@ const Signin = () => {
             }
             let resp = await loginWithOtpAction(postData);
             if (resp.code === 200) {
+                localStorage.setItem("userLoginId", resp.data._id);
                 toast.success(resp.msg || msg);
                 navigate("/otp_verification", { state: { email: formData.email } });
 
