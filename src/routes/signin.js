@@ -33,9 +33,8 @@ const Signin = () => {
             let resp = await loginWithOtpAction(postData);
             if (resp.code === 200) {
                 toast.success(resp.msg || msg);
-                setTimeout(() => {
-                    navigate("/otp_verification", { state: { email: formData.email } });
-                }, 2000);
+                navigate("/otp_verification", { state: { email: formData.email } });
+
             } else {
                 setDisabled(false);
                 toast.error(resp.message || "An error occurred.");
