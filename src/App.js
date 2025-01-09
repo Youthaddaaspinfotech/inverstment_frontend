@@ -17,10 +17,14 @@ import Forgetpassword from './routes/forget_password.js';
 
 import Newpassword from './routes/new_password.js';
 import About from './routes/about.js';
+
+
+
 function App() {
   return (
    
     <>
+   
  {/* <Otp_verification/> */}
    {/* <Newpassword/> */}
     {/* <Forgetpassword/> */}

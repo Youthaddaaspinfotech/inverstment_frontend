@@ -7,6 +7,7 @@ import { faGear} from '@fortawesome/free-solid-svg-icons';
 import { faCircleUser } from '@fortawesome/free-solid-svg-icons';
 
 
+import { useTranslation} from 'react-google-multi-lang';
 
 const Navbarr = () => {
 
@@ -23,7 +24,9 @@ const Navbarr = () => {
             style={{ maxHeight: '100px' }}
             navbarScroll  
           >
-            
+             
+             
+
             <Nav.Link href="/home" className='textColor'>Home</Nav.Link>
              
 
@@ -37,8 +40,9 @@ const Navbarr = () => {
               <Nav> 
                 <Row>
                 <Col lg={6}><NavDropdown title="Language" id="navbarScrollingDropdown" className=' dropdownButton mt-2'>
-                <NavDropdown.Item href="#action1">Hindi</NavDropdown.Item>
-                <NavDropdown.Item href="#action2">English</NavDropdown.Item>
+                 <NavDropdown.Item href="#action1" >Hindi</NavDropdown.Item>
+                <NavDropdown.Item href="#action2" >English</NavDropdown.Item>
+                 
                  
                 
                 
@@ -64,4 +68,4 @@ const Navbarr = () => {
   )
 }
 
-export default Navbarr
+export default Navbarr;
