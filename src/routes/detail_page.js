@@ -38,7 +38,7 @@ const Pr_detail_page = () => {
             <Col lg={12}>
               <Card className='cardborderimg'>
                 {/* <Card.Img src={detailImg} className='detailimg' /> */}
-                <Card.Img src={imgPath(propertyData.image)} className='detailimg' />
+                <Card.Img src={imgPath(propertyData?.image)} className='detailimg' />
               </Card>
             </Col>
           </Row>
@@ -137,8 +137,8 @@ const Pr_detail_page = () => {
               <Card className="cardborder p-3">
 
                 <Card.Body>
-                  <Card.Title><h3 style={{ color: "#4590FE" }}>{propertyData.name}</h3>
-                    <h6><img src={locationImg} className='mb-1' />{propertyData.location}</h6>
+                  <Card.Title><h3 style={{ color: "#4590FE" }}>{propertyData?.name}</h3>
+                    <h6><img src={locationImg} className='mb-1' />{propertyData?.location}</h6>
 
                     <Button variant="success" className='greenbtn'>Success</Button>
                   </Card.Title>

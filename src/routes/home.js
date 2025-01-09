@@ -7,14 +7,14 @@ import Get_in_touch from '../component/get_in_touch.js';
 
 const Home = () => {
   return (
-   <>
-   
-  <Banner/>
-  <Body/>
-<Get_in_touch/>
+    <>
+
+      <Banner />
+      <Body />
+      <Get_in_touch />
 
 
-   </>
+    </>
   )
 }
 
