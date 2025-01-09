@@ -4,6 +4,18 @@ export const adminLoginAction = (data) => {
     return postRequest('login', data).then(res => { return res.data });
 }
 
+export const socialLoginAction = (data) => {
+    return postRequest('socialLogin', data).then(res => { return res.data });
+}
+
+export const loginWithOtpAction = (data) => {
+    return postRequest('loginWithOtp', data).then(res => { return res.data });
+}
+
+export const verifyOtpAction = (data) => {
+    return postRequest('verifyOtp', data).then(res => { return res.data });
+}
+
 export const addEditAdminsAction = (data) => {
     return postRequest('register', data).then(res => { return res.data });
 }

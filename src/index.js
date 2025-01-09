@@ -4,7 +4,7 @@ import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {BrowserRouter} from 'react-router-dom';
+import { HashRouter, BrowserRouter } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { GoogleOAuthProvider } from '@react-oauth/google';
@@ -13,20 +13,14 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  // <HashRouter >
+  //   <App />
+  // </HashRouter >
 
-<BrowserRouter>
+  <BrowserRouter>
+    <GoogleOAuthProvider clientId="786218004075-9qgocbuaetdu4r6ubpd8j171prbojgt4.apps.googleusercontent.com"><App /></GoogleOAuthProvider>;
 
-    <GoogleOAuthProvider
-      clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID} // Reference the environment variable
-    >
-      <App />
-    </GoogleOAuthProvider>
- 
-</BrowserRouter>
-
-
-
-
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function

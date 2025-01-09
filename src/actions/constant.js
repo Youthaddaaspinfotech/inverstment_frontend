@@ -5,7 +5,7 @@ export const BASE_URL = "http://localhost:7000"
 
 export const imgPath = (name) => {
     return (
-        `http://localhost:4000/${name}`
+        `https://investmentapi.youthadda.co/${name}`
     )
 }
 export const PermissionList = [

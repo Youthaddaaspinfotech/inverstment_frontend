@@ -153,22 +153,22 @@ const Footer = () => {
 
           </Col>
           {/* six col end */}
-  {/* secound row start */}
+          {/* secound row start */}
 
- <Col>
- <Row className='textColor footer2Box d-flex  justify-content-evenly'>
-          <Col lg={3} md={3} sm={3} xs={12} className="g-3"><span>Terms of Use</span></Col>
-          <Col lg={3} md={3} sm={3} xs={12} className="g-3" ><span>Privacy Policy</span></Col>
-          <Col lg={3} md={3} sm={3} xs={12} className="g-3"  ><span>Responsible Disclosure Policy</span></Col>
-          <Col lg={3} md={3} sm={3} xs={12} className="g-3"><span>Sitemap</span></Col>
-        </Row>
- </Col>
-    {/* secound row end */}
+          <Col>
+            <Row className='textColor footer2Box d-flex  justify-content-evenly'>
+              <Col lg={3} md={3} sm={3} xs={12} className="g-3"><span>Terms of Use</span></Col>
+              <Col lg={3} md={3} sm={3} xs={12} className="g-3" ><span>Privacy Policy</span></Col>
+              <Col lg={3} md={3} sm={3} xs={12} className="g-3"  ><span>Responsible Disclosure Policy</span></Col>
+              <Col lg={3} md={3} sm={3} xs={12} className="g-3"><span>Sitemap</span></Col>
+            </Row>
+          </Col>
+          {/* secound row end */}
         </Row>
 
-       
-      
-    
+
+
+
 
       </>
 

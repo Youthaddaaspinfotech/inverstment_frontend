@@ -6,7 +6,9 @@ let wj_cancel;
 let resp;
 export const request = (path, data, method) => {
 	try {
-		let url = "https://investmentapi.youthadda.co/";
+		// let url = `https://bikerentalapi.youthadda.co`;
+		let url = "https://investmentapi.youthadda.co";
+		// let url = "http://localhost:5555"
 
 		var options = {
 			method: method,
