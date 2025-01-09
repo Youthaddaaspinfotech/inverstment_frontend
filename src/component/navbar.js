@@ -8,6 +8,7 @@ import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { faCircleUser } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
+import { useTranslation} from 'react-google-multi-lang';
 
 const Navbarr = () => {
 
@@ -66,4 +67,4 @@ const Navbarr = () => {
   )
 }
 
-export default Navbarr
+export default Navbarr;

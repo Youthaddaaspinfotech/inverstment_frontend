@@ -15,12 +15,12 @@
     "axios": "^1.7.9",
     "bootstrap": "^5.3.3",
     "cors": "^2.8.5",
-    "i18next": "^24.2.1",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.6",
     "react-confirm-alert": "^3.0.6",
     "react-dom": "^18.3.1",
-    "react-i18next": "^15.4.0",
+    "react-google-multi-lang": "^1.0.7",
+    "react-multi-lang": "^2.2.0",
     "react-otp-input": "^3.1.1",
     "react-router-dom": "^6.28.0",
     "react-scripts": "5.0.1",
@@ -50,8 +50,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "typescript": "^4.9.5"
   }
 }

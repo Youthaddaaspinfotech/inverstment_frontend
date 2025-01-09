@@ -1,7 +1,7 @@
 import React from 'react';
 import bannerimg from "../assets/body/banner.jpeg"; // Ensure the image path is correct
+ const Banner = () => {
 
-const Banner = () => {
   return (
     <>
       {/* banner start */}
