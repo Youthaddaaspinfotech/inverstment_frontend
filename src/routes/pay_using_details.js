@@ -1,7 +1,10 @@
 import React from 'react'
 import { Card, Button, Row, Col, Form, ListGroup } from "react-bootstrap"
 import pay_using from "../assets/card/card_icon/pay_using.png"
+import { Link, useLocation } from 'react-router-dom';
 const Pay_using_details = () => {
+  const location = useLocation();
+  const { amount } = location.state || {};
   return (
     <>
 
@@ -23,7 +26,7 @@ const Pay_using_details = () => {
                             <Form.Label>Account Number</Form.Label>
                             <Form.Control
                               type="text"
-                              name="firstName" placeholder='932567890765' disabled/>
+                              name="firstName" placeholder='932567890765' disabled />
                           </Form.Group>
                         </Row>
                         <Row className="mb-3">
@@ -32,7 +35,7 @@ const Pay_using_details = () => {
                             <Form.Control
                               type="text"
                               placeholder="SBIND00456"
-                              name="city" disabled/>
+                              name="city" disabled />
                           </Form.Group>
 
                         </Row>
@@ -47,10 +50,10 @@ const Pay_using_details = () => {
                           <ListGroup.Item>
                             <Row className='g-2 p-1'>
                               <Col lg={12} md={12} sm={12} xs={12}>
-                                <h6><img src={pay_using}/> <span>Payment Summary</span></h6>
+                                <h6><img src={pay_using} /> <span>Payment Summary</span></h6>
                               </Col>
                               <Col className='text-start'> Product name</Col>
-                              <Col  className='text-end'>Price</Col>
+                              <Col className='text-end'>Price</Col>
                             </Row>
                           </ListGroup.Item>
                           <ListGroup.Item >
@@ -58,21 +61,28 @@ const Pay_using_details = () => {
                               <Col>Pune Property</Col>
                               <Col className='text-end'>30,00,000</Col>
                             </Row>
-                        
-                              <Row className='g-3 mt-3'>
 
-                                <Col>Intrest</Col>
-                                <Col className='text-end'>18%</Col>
-                              </Row>
+                            <Row className='g-3 mt-3'>
 
-                         
+                              <Col>Intrest</Col>
+                              <Col className='text-end'>11%</Col>
+                            </Row>
+
+
                           </ListGroup.Item>
-                          <ListGroup.Item><h5 className='text-end'><span>Total:</span>35,00,000</h5></ListGroup.Item>
+                          {/* <ListGroup.Item><h5 className='text-end'><span>Total:</span>35,00,000</h5></ListGroup.Item> */}
+                          <ListGroup.Item>
+                            <h5 className="text-end">
+                              <span>Total:</span> {amount ? amount : "35,00,000"}
+                            </h5>
+                          </ListGroup.Item>
                         </ListGroup>
 
                       </Card>
                       <Button variant="success" className='w-100 mt-3'>
-                        Block level button
+                        <Link to="/Property_portfolio" style={{ textDecoration: 'none', color: 'white' }}>
+                          Payment Completed
+                        </Link>
                       </Button>
                     </Col>
                   </Row>
