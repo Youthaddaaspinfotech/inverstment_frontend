@@ -25,6 +25,6 @@ const PrivateRoutes = () => (
         <Footer />
     </>
 
-);
+)
 
 export default PrivateRoutes;

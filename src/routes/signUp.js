@@ -8,13 +8,13 @@ import {Link} from "react-router-dom"
 const SignUp = () => {
     return (
         <>
-            <Row className='justify-content-center mt-5'>
-                <Col lg={9} md={9} sm={9} xs={9}>
+            <Row className="justify-content-center align-items-center" style={{ height: '100vh' }}>
+                <Col lg={10} md={10} sm={11} xs={11}>
                     <Row>
                         {/* left start */}
-                        <Col lg={6} md={6} sm={12} xs={12} className='leftbgColor p-5'>
+                        <Col lg={6} md={6} sm={12} xs={12} className='leftbgColor p-3  d-none d-sm-block'>
                             <Row className='justify-content-center'>
-                                <Col lg={12} md={12} sm={12} xs={12} className='text-center m-5'><h1 className='fontWhite'>Lorem ipsum dolor sit amet consectetur.</h1>
+                                <Col lg={12} md={12} sm={12} xs={12} className='text-center m-3'><h5 className='fontWhite'>"Create an account and start your journey in property investment today."</h5>
                                 </Col>
                                 {/* <Col lg={6} md={6} sm={6} xs={6} className='text-center'><img src={signUp} height="auto" /></Col> */}
                                 <Col lg={12} md={12} sm={12} xs={12} className='text-center'>
@@ -25,7 +25,7 @@ const SignUp = () => {
 
                         {/* left end */}
                         {/* rigth start */}
-                        <Col lg={6} md={6} sm={12} xs={12} className='rigthbgColor p-5'>
+                        <Col lg={6} md={6} sm={12} xs={12} className='rigthbgColor p-3'>
                             <Row>
                                 <Col lg={12} md={12} sm={12} xs={12} className="d-flex justify-content-end align-items-start">
                                     <img src={logo} className="logoImg" alt="Logo" />

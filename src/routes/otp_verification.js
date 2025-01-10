@@ -58,7 +58,7 @@ const Otp_verification = () => {
 
   return (
     <Row className="justify-content-center mt-5">
-      <Col lg={10} md={10} sm={10} xs={10}>
+      <Col lg={11} md={11} sm={11} xs={11}>
         <Row>
           {/* Left side */}
           <Col lg={6} md={6} sm={12} xs={12} className="leftbgColor p-4">
