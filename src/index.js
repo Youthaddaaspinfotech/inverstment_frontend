@@ -17,10 +17,10 @@ root.render(
   //   <App />
   // </HashRouter >
 
-  <BrowserRouter>
+  <HashRouter>
     <GoogleOAuthProvider clientId="786218004075-9qgocbuaetdu4r6ubpd8j171prbojgt4.apps.googleusercontent.com"><App /></GoogleOAuthProvider>;
 
-  </BrowserRouter>
+  </HashRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
