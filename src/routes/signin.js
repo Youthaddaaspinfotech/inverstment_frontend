@@ -82,16 +82,18 @@ const Signin = () => {
 
     return (
         <>
-            <Row className='justify-content-center mt-4'>
-                <Col lg={9} md={9} sm={9} xs={9}>
-                    <Row>
+              <Row className='justify-content-center align-items-center' style={{ height: '100vh'}}>
+                <Col lg={9} md={10} sm={11} xs={11}>
+                    <Row className=''>
                         {/* left start */}
-                        <Col lg={6} md={6} sm={12} xs={12} className='leftbgColor p-4'>
+                        <Col lg={6} md={6} sm={12} xs={12} className='leftbgColor p-2 d-none  d-sm-block'>
                             <Row className='justify-content-center'>
-                                <Col lg={12} md={12} sm={12} xs={12} className='text-center m-5'><h6 className='fontWhite'>Lorem ipsum dolor sit amet consectetur.</h6>
+                                <Col lg={12} md={12} sm={12} xs={12} className='text-center m-2'><h6 className='fontWhite'>"Your gateway to unlocking exclusive property deals."
+
+                                </h6>
                                 </Col>
-                                {/* <Col lg={6} md={6} sm={6} xs={6} className='text-center'><img src={signUp} height="auto" /></Col> */}
-                                <Col lg={12} md={12} sm={12} xs={12} className='text-center'>
+                              
+                                <Col lg={12} md={12} sm={12} xs={12} className='text-center '>
                                     <img src={loginimg} style={{ maxWidth: '100%', height: 'auto' }} alt="Sign Up" />
                                 </Col>
                             </Row>
@@ -99,19 +101,19 @@ const Signin = () => {
 
                         {/* left end */}
                         {/* rigth start */}
-                        <Col lg={6} md={6} sm={12} xs={12} className='rigthbgColor p-5'>
+                        <Col lg={6} md={6} sm={12} xs={12} className='rigthbgColor p-2'>
                             <Row>
                                 <Col lg={12} md={12} sm={12} xs={12} className="d-flex justify-content-end align-items-start">
                                     <img src={logo} className="logoImg" alt="Logo" />
                                 </Col>
-                                <Col className="d-flex justify-content-center align-items-center pt-5 ">
-
-                                    <Form className="w-100 px-3 " noValidate validated={validated} onSubmit={handleSubmit}>
-                                        <Row className='pt-3'>
-                                            <h2 >Sign <span style={{ color: "#4591FF" }}>In</span></h2>
+                                <Col lg={12} md={12} sm={12} xs={12} >
+                                <Form className="w-100" noValidate validated={validated} onSubmit={handleSubmit} >
+                                        <Row className='justify-content-center p-3'>
+                                          
                                             <Form.Group as={Col} md="9" controlId="validationFormik103" className="position-relative">
-                                                <Form.Label>Email</Form.Label>
-                                                <Form.Control
+                                            <Col lg={12} md={12} sm={12} xs={12}><h2>Sign <span style={{ color: "#4591FF" }}>In</span></h2></Col>  
+                                                <Form.Label className='mt-2'>Email</Form.Label>
+                                                <Form.Control className='mt-3 mb-3'
                                                     type="email"
                                                     placeholder="Enter email"
                                                     value={formData.email || ""}
@@ -122,40 +124,35 @@ const Signin = () => {
                                                     Please provide a valid Email.
                                                 </Form.Control.Feedback>
                                             </Form.Group>
-                                        </Row>
-                                        {/* <Row>
-                                        <Form.Group as={Col} md="9" className="position-relative mb-3">
-                                            <Form.Label> password</Form.Label>
-                                            <Form.Control type="password" required name="password" />
-                                            <h6 className='text-end'>forget password</h6>
-                                        </Form.Group>
-                                        </Row> */}
-
-                                        <Row className='mt-3 g-4'>
-                                            <Col lg={9} md={9} sm={12} xs={12} className='g-3 position-relative'>
-                                                <Button type="submit" disabled={isDisabled} className='px-4 w-100'>LogIn</Button>
+                                            <Col lg={9} md={9} sm={12} xs={12} className='g-4 position-relative mt-3'>
+                                                <Button type="submit" disabled={isDisabled} className=' w-100'>LogIn</Button>
                                             </Col>
                                         </Row>
+                                      
                                     </Form>
+
                                 </Col>
-                                <Col lg={9} md={9} sm={9} xs={9} className="rigthbgColor d-flex flex-column justify-content-center align-items-center position-relative mt-2">
+                                <Row className='justify-content-center'>
+                                <Col lg={9} md={9} sm={9} xs={9}  className="rigthbgColor d-flex  justify-content-center align-items-center mt-2">
                                     <span> or</span>
                                 </Col>
-                                <Col lg={9} md={9} sm={9} xs={9} className="rigthbgColor d-flex flex-column justify-content-center align-items-center position-relative mt-2">
+                                <Col lg={9} md={9} sm={9} xs={9}  className="rigthbgColor d-flex  justify-content-center align-items-center mt-3">
                                     <span><img src={google} onClick={() => gmaillogin()} /></span>
                                 </Col>
 
-                                <Col lg={9} md={9} sm={9} xs={9} className="rigthbgColor d-flex flex-column justify-content-center align-items-center position-relative mt-2">
+                                <Col lg={9} md={9} sm={9} xs={9}   className="rigthbgColor d-flex  justify-content-center align-items-center mt-3">
                                     <span style={{ fontSize: "small" }}>Don’t have an account?<Link to="/signUp"> Sign Up</Link> </span>
                                 </Col>
+                               
+                                </Row>
                             </Row>
                         </Col>
                         {/* rigth end */}
                     </Row>
                 </Col>
 
-            </Row >
-
+            </Row >  
+     
         </>
     )
 }

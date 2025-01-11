@@ -13,7 +13,7 @@ function App() {
       {localStorage.getItem('loginData') == 'true' ? <PrivateRoutes /> : <PublicRoutes />}
       <ToastContainer />
     </>
-  );
+  )
 }
 
 export default App;

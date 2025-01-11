@@ -13,7 +13,7 @@ const Forgetpassword = () => {
                         {/* left start */}
                         <Col lg={6} md={6} sm={12} xs={12} className='leftbgColor p-4'>
                             <Row className='justify-content-center'>
-                                <Col lg={12} md={12} sm={12} xs={12} className='text-center m-5'><h1 className='fontWhite'>Lorem ipsum dolor sit amet consectetur.</h1>
+                                <Col lg={12} md={12} sm={12} xs={12} className='text-center m-5'><h1 className='fontWhite'>No worries, we’ll help you get back on track..</h1>
                                 </Col>
                                 {/* <Col lg={6} md={6} sm={6} xs={6} className='text-center'><img src={signUp} height="auto" /></Col> */}
                                 <Col lg={12} md={12} sm={12} xs={12} className='text-center'>
