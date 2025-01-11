@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react';
 import { Row, Col, Form, Button } from "react-bootstrap";
-import login from "../assets/body/login.jpg"
-import logo from "../assets/body/logo.png"
-import OtpInput from "react-otp-input"
+import login from "../assets/body/login.jpg";
+import logo from "../assets/body/logo.png";
+import OtpInput from "react-otp-input";
 import verification from "../assets/body/otp_verification.jpg";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom"; // Keep only useNavigate
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { verifyOtpAction } from '../actions/admin.actions';
@@ -15,6 +16,7 @@ const Otp_verification = () => {
   const location = useLocation();
   let navigate = useNavigate();
   const { email } = location.state || {};
+  const [countdown, setCountdown] = useState(120);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -36,7 +38,8 @@ const Otp_verification = () => {
       localStorage.setItem("authorization", resp.token);
       toast.success(resp.msg);
       localStorage.setItem("loginType", "user");
-      localStorage.setItem("status", JSON.stringify(resp.status));
+      localStorage.setItem("status", JSON.stringify(resp.data.status));
+      localStorage.setItem("userData",JSON.stringify(resp.data));
       window.location.href = "/"
     } else {
       toast.error(resp.msg || "Invalid OTP");
@@ -53,15 +56,37 @@ const Otp_verification = () => {
     setFormData({ ...formData, ...newForm });
   };
 
+  useEffect(() => {
+    // Decrease the countdown every second
+    const timer = setInterval(() => {
+      setCountdown(prev => {
+        if (prev <= 1) {
+          clearInterval(timer); // Stop the countdown once it reaches 0
+          // Navigate to '/login' with the email state
+          navigate('/signin', { state: { email } });
+        }
+        return prev - 1;
+      });
+    }, 1000); // 1-second interval
+
+    return () => clearInterval(timer); // Cleanup on component unmount
+  }, [navigate, email]);
+
+  const formatTime = (timeInSeconds) => {
+    const minutes = Math.floor(timeInSeconds / 60);
+    const seconds = timeInSeconds % 60;
+    return `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+  };
+
   return (
     <Row className="justify-content-center mt-5">
       <Col lg={11} md={11} sm={11} xs={11}>
         <Row>
           {/* Left side */}
-          <Col lg={6} md={6} sm={12} xs={12} className="leftbgColor p-4">
+          <Col lg={6} md={6} sm={12} xs={12} className="leftbgColor p-4 d-none  d-sm-block">
             <Row className="justify-content-center">
               <Col lg={12} md={12} sm={12} xs={12} className="text-center m-5">
-                <h6 className="fontWhite">Lorem ipsum dolor sit amet consectetur.</h6>
+                <h6 className="fontWhite">Secure your account by verifying the <span style={{ color: "black" }}>OTP</span> sent to you.</h6>
               </Col>
               <Col lg={12} md={12} sm={12} xs={12} className="text-center">
                 <img src={verification} style={{ maxWidth: '100%', height: 'auto' }} alt="Sign Up" />
@@ -81,7 +106,7 @@ const Otp_verification = () => {
                     <Col><h2>OTP <span style={{ color: "#4591FF" }}>Verification</span></h2></Col>
                     <Col lg={12} md={12} sm={12} xs={12}>
                       <p style={{ fontSize: "small", fontWeight: "bold" }} className="mt-2">
-                        Please enter OTP shared on your email <span style={{ color: "#4691FF" }}> Change Email ID</span>
+                        Please enter OTP shared on your email <span style={{ color: "#4691FF" }}> <span className='hand' onClick={(e)=>{navigate('/signin')}}>Change Email ID</span></span>
                       </p>
                     </Col>
                     <Row>
@@ -103,7 +128,7 @@ const Otp_verification = () => {
                     </Row>
                     <Row>
                       <Col lg={9} md={9} sm={9} xs={9}>
-                        <span style={{ color: "#4691FF" }}>Resend OTP</span> <span>in 00:00</span>
+                        <span style={{ color: "#4691FF" }}>Resend OTP</span> <span>in {formatTime(countdown)}</span>
                       </Col>
                     </Row>
                   </Row>

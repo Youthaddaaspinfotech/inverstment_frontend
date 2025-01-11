@@ -16,7 +16,7 @@ const Footer = () => {
               <Col><img src={logo} className='logoImg mb-2' /></Col>
             </Row>
             <Row >
-              <Col><p>If you're visiting this page, you're likely here because you're searching for a random sentence. Sometimes a random.
+              <Col><p>Real estate is the closest thing to a proverbial 'get rich quick' scheme.
               </p></Col>
             </Row>
             <Row>
@@ -29,138 +29,46 @@ const Footer = () => {
 
             </Row>
           </Col>
-          {/* first col end */}
-          {/* secound col start */}
-          <Col lg={2} md={12} sm={12} xs={12} className=''>
-            <Row>
-              <Col><h5 className='footerheading mb-3'>Our Solution</h5></Col>
-            </Row>
-            <Row>
-              <Col><p>White labelled flows</p></Col>
-            </Row>
-            <Row>
-              <Col><p>No Code Platform</p></Col>
-            </Row>
-            <Row>
-              <Col><p>API</p></Col>
-            </Row>
-            <Row>
-              <Col><p>Marketplace</p></Col>
-            </Row>
-            <Row>
-              <Col><p>Lending</p></Col>
-            </Row>
-          </Col>
-          {/* secound col end */}
-          {/* third col start */}
-          <Col lg={2} md={12} sm={12} xs={12} className=''>
-            <Row>
-              <Col><h5 className='footerheading'>Usecase</h5></Col>
-            </Row>
-            <Row>
-              <Col><p>KYC</p></Col>
-            </Row>
-            <Row>
-              <Col><p>Video Verification</p></Col>
-            </Row>
-            <Row>
-              <Col><p>Supplier Due Diligence</p></Col>
-            </Row>
-            <Row>
-              <Col><p>Age Verification</p></Col>
-            </Row>
-            <Row>
-              <Col><p>AML</p></Col>
-            </Row>
-            <Row>
-              <Col><p>Fraud Prevention</p></Col>
-            </Row>
-            <Row>
-              <Col><p>IDV</p></Col>
-            </Row>
-          </Col>
 
-          {/* third col end */}
-          {/* four col start */}
-          <Col lg={2} md={12} sm={12} xs={12} className=''>
-
-            <Row>
-              <Col><h5 className='footerheading mb-3'>Industrial</h5></Col>
-            </Row>
-            <Row>
-              <Col><p>Financial Services</p></Col>
-            </Row>
-            <Row>
-              <Col><p>Credit Unions</p></Col>
-            </Row>
-            <Row>
-              <Col><p>Banking</p></Col>
-            </Row>
-            <Row>
-              <Col><p>Global Remittance</p></Col>
-            </Row>
-            <Row>
-              <Col><p>Gaming</p></Col>
-            </Row>
-            <Row>
-              <Col><p>Supplier Management</p></Col>
-            </Row>
-            <Row>
-              <Col><p>Sharing Economy</p></Col>
-            </Row>
-            <Row>
-              <Col><p>Home and Vehical Rental</p></Col>
-            </Row>
-          </Col>
-          {/* four col end */}
-          {/* five col start */}
-          <Col lg={2} md={12} sm={12} xs={12} className=''>
+          <Col lg={6} md={12} sm={12} xs={12} className='mt-4 pt-4'>
             <Row>
               <Col><h5 className='footerheading mb-3'>Our Company</h5></Col>
             </Row>
             <Row>
-              <Col><p>About Us</p></Col>
+              <Col><p><span className='hand'>About Us</span></p></Col>
             </Row>
             <Row>
-              <Col><p>Partners</p></Col>
+              <Col><p><span className='hand'>Our Policy</span></p></Col>
             </Row>
             <Row>
-              <Col><p>Media Releases</p></Col>
+              <Col><p><span className='hand'>Media Releases</span></p></Col>
             </Row>
             <Row>
-              <Col><p>Events</p></Col>
+              <Col><p><span className='hand'>Contact Us</span></p></Col>
             </Row>
 
           </Col>
-          {/* five col end */}
-          {/* six col start */}
-          <Col lg={2} md={12} sm={12} xs={12} className=''>
-            <Row>
-              <Col><h5 className='footerheading mb-3'>Resource</h5></Col>
-            </Row>
-            <Row>
-              <Col><p>Blogs</p></Col>
-            </Row>
-            <Row>
-              <Col><p>White Papers & Reports</p></Col>
-            </Row>
-            <Row>
-              <Col><p>Customer Stories</p></Col>
-            </Row>
-            <Row>
-              <Col><p>API Reference Docs</p></Col>
-            </Row>
 
-          </Col>
-          {/* six col end */}
-          {/* secound row start */}
-
-          <Col>
+          <Col lg={4} md={12} sm={12} xs={12} className='mt-4 pt-3'>
+            <h5 className='mb-0 pb-0'>Contact Info</h5>
             <Row className='textColor footer2Box d-flex  justify-content-evenly'>
-              <Col lg={3} md={3} sm={3} xs={12} className="g-3"><span>Terms of Use</span></Col>
-              <Col lg={3} md={3} sm={3} xs={12} className="g-3" ><span>Privacy Policy</span></Col>
-              <Col lg={3} md={3} sm={3} xs={12} className="g-3"  ><span>Responsible Disclosure Policy</span></Col>
-              <Col lg={3} md={3} sm={3} xs={12} className="g-3"><span>Sitemap</span></Col>
+              <Col lg={12} md={12} sm={12} xs={12}>
+                <Row className='mt-2 mb-2'>
+                  <Col lg={4} md={4} sm={4} xs={4}>Address : </Col>
+                  <Col lg={8} md={8} sm={8} xs={8}>5-TY/1-ATV Old Palasia Opposite Jockey Showroom, Ashok Nagar, Indore, Madhya Pradesh 452001</Col>
+                </Row>
+                <Row className='mt-2 mb-2'>
+                  <Col lg={4} md={4} sm={4} xs={4}>Phone : </Col>
+                  <Col lg={8} md={8} sm={8} xs={8}>
+                    <a href="tel:+919998887776" style={{color:"#ffffff"}}> +91-9998887776</a> ||
+                    <a href="tel:+918887776665" style={{color:"#ffffff"}}> +918887776665</a>
+                  </Col>
+                </Row>
+                <Row className='mt-2 mb-2'>
+                  <Col lg={4} md={4} sm={4} xs={4}>E-mail : </Col>
+                  <Col lg={8} md={8} sm={8} xs={8}>info@jagannathgrop.co.in</Col>
+                </Row>
+              </Col>
             </Row>
           </Col>
           {/* secound row end */}

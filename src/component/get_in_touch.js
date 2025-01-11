@@ -5,7 +5,7 @@ const Get_in_touch = () => {
     return (
         <>
             <Row className='justify-content-center mt-4 p-4'>
-                <Col lg={9} className='bg-white getbody p-5'>
+                <Col lg={9} className='bg-white getbody p-3'>
                     <Row>
                         <Col className='text-center mb-5 grtheading ' lg={12}>
                             <h1>Get in touch</h1>
@@ -27,7 +27,7 @@ const Get_in_touch = () => {
                                                     </Card.Text>
 
                                                     <Form >
-                                                        <Row className="mb-3 ">
+                                                        <Row className="mb-3 g-3">
                                                             <Form.Group as={Col} md="6" controlId="validationFormik101" className="position-relative">
                                                                
                                                                 <Form.Control type="text" name="FirstName" className='getinpbox' placeholder='First Name' />

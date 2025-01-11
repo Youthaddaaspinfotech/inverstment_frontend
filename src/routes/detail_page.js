@@ -41,32 +41,33 @@ const Pr_detail_page = () => {
   const handleSubmit = async (event) => {
     event.preventDefault(); // Prevent default form submission
     const form = event.currentTarget;
-
+  
     // Check validity of the form
     if (form.checkValidity() === false) {
       event.stopPropagation();
       setValidated(true);
     } else {
       setDisabled(true);
-      const msg = "Property investment success";
-      const postData = new FormData();
+  
+      // Convert formData into a plain object
+      const postData = {};
       for (let key in formData) {
-        postData.append(key, formData[key]);
+        postData[key] = formData[key];
       }
-      postData.append("propertyId", propertyData._id); // Add property _id
-      postData.append("userId", localStorage.getItem("userLoginId"));
-      const resp = await addEditPortfolioAction(postData);
-      if (resp.code === 200) {
-        toast.success(resp.msg || msg);
-        navigate("/pay_using_details", {
-          state: { amount: formData.amount },
-        });
-      } else {
-        setDisabled(false);
-        toast.error(resp.message || "An error occurred.");
-      }
+  
+      // Add additional fields to the object
+      postData.propertyId = propertyData._id;
+      postData.userId = localStorage.getItem("userLoginId");
+  
+      // Pass plain object through navigate
+      navigate("/pay_using_details", {
+        state: { formData: postData, homeData : propertyData },
+      });
     }
-  }
+  };
+  
+
+
   const handleChange = (name, event) => {
     setFormData({ ...formData, [name]: event.target.value });
   };
@@ -118,7 +119,7 @@ const Pr_detail_page = () => {
                   <Form noValidate validated={validated} onSubmit={handleSubmit}>
                     <Row className="align-items-center">
                       {/* Capital Section */}
-                      <Col lg={9} md={9} sm={12} xs={12} className="mb-3">
+                      <Col lg={3} md={12} sm={12} xs={12} className="mb-3">
                         <Form.Group>
                           <Form.Label className="fontsize">
                             Capital<span style={{ color: "red" }}>*</span>
@@ -130,17 +131,17 @@ const Pr_detail_page = () => {
                             autoComplete="off"
                             value={formData.amount ? formData.amount : ""}
                             onChange={(e) => handleChange("amount", e)}
-                            className="capital-input"
+                            className="capital-input1"
                             required
                           />
                           <Form.Control.Feedback type="invalid">
-                            Please provide a valid capital amount.
+                            Please provide a valid capital amount greater than Rs. 50000 and less than Rs. 1000000.
                           </Form.Control.Feedback>
                         </Form.Group>
                       </Col>
 
                       {/* Tenure Section */}
-                      <Col lg={3} md={3} sm={12} xs={12} className="mb-3">
+                      <Col lg={3} md={12} sm={12} xs={12} className="mb-3">
                         <Form.Group>
                           <Form.Label className="fontsize">
                             Tenure<span style={{ color: "red" }}>*</span>
@@ -162,14 +163,56 @@ const Pr_detail_page = () => {
                           </Form.Control.Feedback>
                         </Form.Group>
                       </Col>
+                      <Col lg={6} md={12} sm={12} xs={12}>
+                        <Row className='optionalcs'>
+                          <Col lg={6} md={6} sm={12} xs={12} className="mb-3">
+                            <Form.Group>
+                              <Form.Label className="fontsize">
+                                Agent Name (Optional)
+                              </Form.Label>
+                              <Form.Control
+                                type="text"
+                                placeholder="Agent Name"
+                                name="capital"
+                                autoComplete="off"
+                                value={formData.agentName ? formData.agentName : ""}
+                                onChange={(e) => handleChange("agentName", e)}
+                                className="capital-input"
+                              />
+                              <Form.Control.Feedback type="invalid">
+                                Please provide a valid Agent Name.
+                              </Form.Control.Feedback>
+                            </Form.Group>
+                          </Col>
+                          <Col lg={6} md={6} sm={12} xs={12} className="mb-3">
+                            <Form.Group>
+                              <Form.Label className="fontsize">
+                               Agent Mobile (Optional)
+                              </Form.Label>
+                              <Form.Control
+                                type="text"
+                                placeholder="Agent Mobile No. (10 digit)"
+                                name="capital"
+                                autoComplete="off"
+                                value={formData.agentMobile ? formData.agentMobile : ""}
+                                onChange={(e) => handleChange("agentMobile", e)}
+                                className="capital-input"
+                              />
+                              <Form.Control.Feedback type="invalid">
+                                Please provide a valid Agent Mobile Number.
+                              </Form.Control.Feedback>
+                            </Form.Group>
+                          </Col>
+                        </Row>
+                      </Col>
                     </Row>
-                    <div className="d-flex justify-content-center">
+                    <div className="d-flex justify-content-center mt-3">
                       <Button
                         type="submit"
                         variant="primary"
                         disabled={isDisabled}
                       >
-                        Invest Now
+                        Go To Investment Page
                       </Button>
                     </div>
                   </Form>
