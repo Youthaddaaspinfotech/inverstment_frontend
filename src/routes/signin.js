@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Row, Col, Form, Button } from "react-bootstrap";
 import loginimg from "../assets/body/login.jpg"
 import logo from "../assets/body/logo.png"
@@ -13,7 +13,12 @@ const Signin = () => {
     let navigate = useNavigate();
     const [isDisabled, setDisabled] = useState(false);
     const [validated, setValidated] = useState(false);
-    const [formData, setFormData] = useState({});
+    const location = useLocation();
+    const { email } = location.state || {};
+    const [formData, setFormData] = useState({
+        email: "" // Initialize formData state with email field
+      });
+
 
     const handleSubmit = async (event) => {
         const form = event.currentTarget;
@@ -32,7 +37,7 @@ const Signin = () => {
             }
             let resp = await loginWithOtpAction(postData);
             if (resp.code === 200) {
-                localStorage.setItem("userLoginId", resp.data._id);
+                localStorage.setItem("userLoginId", resp.data);
                 toast.success(resp.msg || msg);
                 navigate("/otp_verification", { state: { email: formData.email } });
 
@@ -80,9 +85,18 @@ const Signin = () => {
         onError: (error) => console.log('Login Failed:', error)
     });
 
+    useEffect(() => {
+        if (email) {
+            setFormData(prevData => ({
+                ...prevData,
+                email: email
+            }));
+        }
+    }, [email]);
+
     return (
         <>
-              <Row className='justify-content-center align-items-center' style={{ height: '100vh'}}>
+            <Row className='justify-content-center align-items-center' style={{ height: '100vh' }}>
                 <Col lg={9} md={10} sm={11} xs={11}>
                     <Row className=''>
                         {/* left start */}
@@ -92,7 +106,7 @@ const Signin = () => {
 
                                 </h6>
                                 </Col>
-                              
+
                                 <Col lg={12} md={12} sm={12} xs={12} className='text-center '>
                                     <img src={loginimg} style={{ maxWidth: '100%', height: 'auto' }} alt="Sign Up" />
                                 </Col>
@@ -107,11 +121,11 @@ const Signin = () => {
                                     <img src={logo} className="logoImg" alt="Logo" />
                                 </Col>
                                 <Col lg={12} md={12} sm={12} xs={12} >
-                                <Form className="w-100" noValidate validated={validated} onSubmit={handleSubmit} >
+                                    <Form className="w-100" noValidate validated={validated} onSubmit={handleSubmit} >
                                         <Row className='justify-content-center p-3'>
-                                          
+
                                             <Form.Group as={Col} md="9" controlId="validationFormik103" className="position-relative">
-                                            <Col lg={12} md={12} sm={12} xs={12}><h2>Sign <span style={{ color: "#4591FF" }}>In</span></h2></Col>  
+                                                <Col lg={12} md={12} sm={12} xs={12}><h2>Sign <span style={{ color: "#4591FF" }}>In</span></h2></Col>
                                                 <Form.Label className='mt-2'>Email</Form.Label>
                                                 <Form.Control className='mt-3 mb-3'
                                                     type="email"
@@ -125,25 +139,25 @@ const Signin = () => {
                                                 </Form.Control.Feedback>
                                             </Form.Group>
                                             <Col lg={9} md={9} sm={12} xs={12} className='g-4 position-relative mt-3'>
-                                                <Button type="submit" disabled={isDisabled} className=' w-100'>LogIn</Button>
+                                                <Button type="submit" disabled={isDisabled} className=' w-100'>Send OTP</Button>
                                             </Col>
                                         </Row>
-                                      
+
                                     </Form>
 
                                 </Col>
                                 <Row className='justify-content-center'>
-                                <Col lg={9} md={9} sm={9} xs={9}  className="rigthbgColor d-flex  justify-content-center align-items-center mt-2">
-                                    <span> or</span>
-                                </Col>
-                                <Col lg={9} md={9} sm={9} xs={9}  className="rigthbgColor d-flex  justify-content-center align-items-center mt-3">
-                                    <span><img src={google} onClick={() => gmaillogin()} /></span>
-                                </Col>
+                                    <Col lg={9} md={9} sm={9} xs={9} className="rigthbgColor d-flex  justify-content-center align-items-center mt-2">
+                                        <span> or</span>
+                                    </Col>
+                                    <Col lg={9} md={9} sm={9} xs={9} className="rigthbgColor d-flex  justify-content-center align-items-center mt-3">
+                                        <span><img src={google} onClick={() => gmaillogin()} /></span>
+                                    </Col>
 
-                                <Col lg={9} md={9} sm={9} xs={9}   className="rigthbgColor d-flex  justify-content-center align-items-center mt-3">
-                                    <span style={{ fontSize: "small" }}>Don’t have an account?<Link to="/signUp"> Sign Up</Link> </span>
-                                </Col>
-                               
+                                    <Col lg={9} md={9} sm={9} xs={9} className="rigthbgColor d-flex  justify-content-center align-items-center mt-3">
+                                        <span style={{ fontSize: "small" }}>Don’t have an account?<Link to="/signUp"> Sign Up</Link> </span>
+                                    </Col>
+
                                 </Row>
                             </Row>
                         </Col>
@@ -151,8 +165,8 @@ const Signin = () => {
                     </Row>
                 </Col>
 
-            </Row >  
-     
+            </Row >
+
         </>
     )
 }

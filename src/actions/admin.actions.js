@@ -80,6 +80,14 @@ export const updateReceivedStatusAction = (data) => {
     return postRequest('updateReceivedStatus', data).then(res => { return res.data });
 }
 
+export const updateUserAction = (data) => {
+    return postRequest('updateUser', data).then(res => { return res.data });
+}
+
+export const getUserInfoAction = (data) => {
+    return postRequest('getUserInfo', data).then(res => { return res.data });
+}
+
 
 export const _deleteAction = (data) => {
     return postRequest('_delete', data).then(res => { return res.data });

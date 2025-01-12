@@ -1,6 +1,6 @@
 export const PORT = "7000";
-// export const BASE_URL = "https://bikerentalapi.youthadda.co/"
-export const BASE_URL = "http://localhost:7000"
+export const BASE_URL = "https://investmentapi.youthadda.co/"
+// export const BASE_URL = "http://localhost:7000"
 
 
 export const imgPath = (name) => {
