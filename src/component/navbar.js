@@ -1,4 +1,4 @@
-import {React, useState} from 'react'
+import { React, useState } from 'react'
 import { Navbar, Container, Nav, Form, NavDropdown, Button, Row, Col, Dropdown } from "react-bootstrap";
 import logoImg from "../assets/body/logo.png"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -10,18 +10,18 @@ import { Link } from 'react-router-dom';
 import { getUserInfoAction } from "../actions/admin.actions";
 
 
-import { useTranslation} from 'react-google-multi-lang';
+import { useTranslation } from 'react-google-multi-lang';
 
 const Navbarr = () => {
   const [userName, setUserName] = useState('');
   const user = JSON.parse(localStorage.getItem('userData')) || ''
 
-      const getList = async()=>{
-          const resp = await getUserInfoAction({userId:user._id});
-          if(resp.code === 200){
-            setUserName(resp.data);
-          }
-      }
+  const getList = async () => {
+    const resp = await getUserInfoAction({ userId: user._id });
+    if (resp.code === 200) {
+      setUserName(resp.data);
+    }
+  }
 
   return (
     <>
@@ -37,7 +37,7 @@ const Navbarr = () => {
               navbarScroll
             >
 
-              <Nav.Link as={Link} to="/" className='textColor'>Home</Nav.Link>
+              <Nav.Link as={Link} to="/home" className='textColor'>Home</Nav.Link>
 
 
               <Nav.Link as={Link} to="/about" className='textColor'>About</Nav.Link>
@@ -61,11 +61,11 @@ const Navbarr = () => {
                 <Col lg={2}><Nav.Link as={Link} to="/logout" aria-label="Logout" className='mt-2 me-2'>
                   <FontAwesomeIcon icon={faSignOutAlt} style={{ color: '#f0f2f5' }} size="lg" />
                 </Nav.Link></Col>
-                
+
                 {/* <Col lg={1}>  <Nav.Link href="#settings" aria-label="Settings " className='mt-2 me-1'>
                   <FontAwesomeIcon icon={faGear} style={{ color: '#ecf2f4' }} size="lg" />
                 </Nav.Link></Col> */}
-                <Col lg={8}> <Nav.Link href="#profile" aria-label="Profile" className='mt-1'><span className='me-2  textColor'>{userName?userName.name:"User"}</span>
+                <Col lg={8}> <Nav.Link href="#profile" aria-label="Profile" className='mt-1'><span className='me-2  textColor'>{userName ? userName.name : "User"}</span>
                   <FontAwesomeIcon icon={faCircleUser} size="2xl" className='me-2' />
                 </Nav.Link></Col>
               </Row>
