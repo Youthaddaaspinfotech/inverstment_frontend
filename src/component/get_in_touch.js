@@ -10,8 +10,6 @@ const Get_in_touch = () => {
                         <Col className='text-center mb-5 grtheading ' lg={12}>
                             <h1>Get in touch</h1>
                         </Col>
-
-
                         <Col>
                             <Row className='justify-content-center '>
                                 <Col lg={9} className='bg-white'>
@@ -29,23 +27,23 @@ const Get_in_touch = () => {
                                                     <Form >
                                                         <Row className="mb-3 g-3">
                                                             <Form.Group as={Col} md="6" controlId="validationFormik101" className="position-relative">
-                                                               
+
                                                                 <Form.Control type="text" name="FirstName" className='getinpbox' placeholder='First Name' />
                                                             </Form.Group>
                                                             <Form.Group as={Col} md="6" controlId="validationFormik102" className="position-relative">
-                                                               
+
                                                                 <Form.Control type="text" name="LastName" className='getinpbox' placeholder='Last Name' />
                                                             </Form.Group>
                                                         </Row>
                                                         <Row className="mb-3">
                                                             <Form.Group as={Col} md="12" controlId="validationFormik103" className="position-relative">
-                                                              
+
                                                                 <Form.Control type="text" name="Email" className='getinpbox' placeholder='Email' />
                                                             </Form.Group>
                                                         </Row>
                                                         <Row className="mb-3">
                                                             <Form.Group as={Col} md="12" controlId="validationFormik103" className="position-relative">
-                                                              
+
                                                                 <Form.Control type="text" className='getinpbox' name="Phone Number" placeholder='Phone Number' />
                                                             </Form.Group>
                                                         </Row>
