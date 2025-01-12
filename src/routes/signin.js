@@ -4,7 +4,7 @@ import loginimg from "../assets/body/login.jpg"
 import logo from "../assets/body/logo.png"
 import google from "../assets/body/login_w_google.png";
 import { useGoogleLogin } from '@react-oauth/google';
-import { loginWithOtpAction } from '../actions/admin.actions';
+import { loginWithOtpAction, socialLoginAction } from '../actions/admin.actions';
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
@@ -17,7 +17,7 @@ const Signin = () => {
     const { email } = location.state || {};
     const [formData, setFormData] = useState({
         email: "" // Initialize formData state with email field
-      });
+    });
 
 
     const handleSubmit = async (event) => {
@@ -70,13 +70,20 @@ const Signin = () => {
 
                     },
                 });
-                //   console.log("user Info"+ JSON.stringify(response.data))
-                //   console.log( response.data.name)
-                //   console.log( response.data.email)
 
+                if (response.status === 200) {
+                    const resp = await socialLoginAction(response.data);
+                    if (resp.code === 200) {
+                        localStorage.setItem("loginData", JSON.stringify(true));
+                        localStorage.setItem("authorization", resp.token);
+                        toast.success("Login");
+                        localStorage.setItem("loginType", "user");
+                        localStorage.setItem("status", JSON.stringify(resp.user.status));
+                        localStorage.setItem("userData", JSON.stringify(resp.user));
+                        navigate('/home')
+                    }
 
-                localStorage.setItem("user", JSON.stringify(response.data));
-                alert(`Welcome, ${response.data.name}!`);
+                }
             } catch (error) {
                 console.log(error);
             }
