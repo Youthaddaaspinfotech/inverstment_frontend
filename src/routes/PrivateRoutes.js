@@ -19,6 +19,7 @@ const PrivateRoutes = () => {
         <Navbarr />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/pr_detail_page" element={<Pr_detail_page />} />
           <Route path="/pay_using_details" element={<Pay_using_details />} />
           <Route path="/Property_portfolio" element={<Property_portfolio />} />
