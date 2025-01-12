@@ -31,15 +31,15 @@ const PopupForm = () => {
             setShowPopup(true);
         }
     }, [userData]);
-    
 
 
-    const handleSubmit = async(event) => {
+
+    const handleSubmit = async (event) => {
         event.preventDefault();
 
         // Save user data to localStorage
         const resp = await updateUserAction(formData)
-        if(resp.code === 200){
+        if (resp.code === 200) {
             const userData = {
                 name: fullName,
                 mobile: mobileNumber
@@ -54,9 +54,9 @@ const PopupForm = () => {
         setFormData({ ...formData, [name]: event.target.value });
     };
 
-    useEffect(()=>{
+    useEffect(() => {
         getList();
-    },[])
+    }, [])
 
 
     return (

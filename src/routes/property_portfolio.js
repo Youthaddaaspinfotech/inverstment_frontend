@@ -48,12 +48,12 @@ const Property_portfolio = () => {
 
                   return (
                     <Col lg={4} md={6} sm={12} xs={12} className='g-3' >
-                        <Row>
-                          <Col lg={12} className="cardContainer">
-                            <Card.Img variant="top" src={card1} className="cardImg p-3" />
-                            <span className="btn21"><FontAwesomeIcon icon={faLocationDot} style={{ "color": "blue" }} />{property?.propertyDocs?.[0]?.location}</span>
-                          </Col>
-                        </Row>
+                      <Row>
+                        <Col lg={12} className="cardContainer">
+                          <Card.Img variant="top" src={card1} className="cardImg p-3" />
+                          <span className="btn21"><FontAwesomeIcon icon={faLocationDot} style={{ "color": "blue" }} />{property?.propertyDocs?.[0]?.location}</span>
+                        </Col>
+                      </Row>
                       <Card className='p-2 cardBody'>
                         <Card.Body className=''>
                           <Card.Title>{propertyName}</Card.Title>
@@ -114,11 +114,12 @@ const Property_portfolio = () => {
           <Get_in_touch />
         </Col>
       </Row>
-
-
-
     </>
   )
 }
 
 export default Property_portfolio
+
+
+
+

@@ -41,31 +41,32 @@ const Pr_detail_page = () => {
   const handleSubmit = async (event) => {
     event.preventDefault(); // Prevent default form submission
     const form = event.currentTarget;
-  
+
     // Check validity of the form
     if (form.checkValidity() === false) {
       event.stopPropagation();
       setValidated(true);
     } else {
       setDisabled(true);
-  
+
       // Convert formData into a plain object
       const postData = {};
       for (let key in formData) {
         postData[key] = formData[key];
       }
-  
+
       // Add additional fields to the object
       postData.propertyId = propertyData._id;
-      postData.userId = localStorage.getItem("userLoginId");
-  
+      const storedUserData = JSON.parse(localStorage.getItem("userData"));
+      postData.userId = storedUserData._id;
+
       // Pass plain object through navigate
       navigate("/pay_using_details", {
-        state: { formData: postData, homeData : propertyData },
+        state: { formData: postData, homeData: propertyData },
       });
     }
   };
-  
+
 
 
   const handleChange = (name, event) => {
@@ -187,7 +188,7 @@ const Pr_detail_page = () => {
                           <Col lg={6} md={6} sm={12} xs={12} className="mb-3">
                             <Form.Group>
                               <Form.Label className="fontsize">
-                               Agent Mobile (Optional)
+                                Agent Mobile (Optional)
                               </Form.Label>
                               <Form.Control
                                 type="text"
