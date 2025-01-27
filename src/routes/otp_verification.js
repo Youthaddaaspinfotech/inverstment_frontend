@@ -40,7 +40,7 @@ const Otp_verification = () => {
       localStorage.setItem("loginType", "user");
       localStorage.setItem("status", JSON.stringify(resp.data.status));
       localStorage.setItem("userData",JSON.stringify(resp.data));
-      window.location.href = "/"
+      setTimeout(()=>{window.location.href = "/"},2000)
     } else {
       toast.error(resp.msg || "Invalid OTP");
     }

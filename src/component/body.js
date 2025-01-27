@@ -47,19 +47,19 @@ const Body = () => {
               <h4>Properties</h4>
             </Col>
             <Col lg={4} md={4} sm={8} xs={8} className="text-end">
-              <Form className="d-flex">
+              {/* <Form className="d-flex">
                 <Form.Control
                   type="search"
                   placeholder="Search for employee directory"
                   className="searchButton"
                   aria-label="Search"
                 />
-              </Form>
+              </Form> */}
             </Col>
           </Row>
           {/* first navbar end */}
           {/* secound nav bar end */}
-          <Row className=''>
+          {/* <Row className=''>
             <Col>
               <Navbar collapseOnSelect expand="lg" className="gap-3">
                 <Nav.Link href="#features">All</Nav.Link>
@@ -74,7 +74,7 @@ const Body = () => {
                 </Navbar.Collapse>
               </Navbar>
             </Col>
-          </Row>
+          </Row> */}
           {/* secound nav bar end */}
           {/* card section start */}
 
@@ -132,7 +132,7 @@ const Body = () => {
             )}
           </Row>
           <Row className='text-center mt-4'>
-            <Col><Button style={{ "backgroundColor": " #4590FE" }}>Load More</Button></Col>
+            {/* <Col><Button style={{ "backgroundColor": " #4590FE" }}>Load More</Button></Col> */}
           </Row>
           {/* card section end */}
         </Col>

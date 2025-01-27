@@ -85,6 +85,9 @@ const Pay_using_details = () => {
       if (resp.code === 200) {
         toast.success(resp.msg || msg);
         navigate("/Property_portfolio");
+      }else if(resp.code === 400){
+        setDisabled(false);
+        toast.error("Investment Amont should be in between or equal to 50k to 10 Lacks");
       } else {
         setDisabled(false);
         toast.error(resp.message || "An error occurred.");

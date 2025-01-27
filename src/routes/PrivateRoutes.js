@@ -10,6 +10,7 @@ import About from './about';
 import Navbarr from '../component/navbar';
 import Footer from '../component/footer';
 import Exit from '../component/exit';
+import InvestmentDetails from '../component/investmentDetails';
 const PrivateRoutes = () => {
 
   const location = useLocation();
@@ -25,6 +26,7 @@ const PrivateRoutes = () => {
         <Route path="/Property_portfolio" element={<Property_portfolio />} />
         <Route path="/get_in_touch" element={<Get_in_touch />} />
         <Route path="/Property_portfolio/pr_detail_page" element={<Pr_detail_page />} />
+        <Route path="/investmentdetails" element={<InvestmentDetails />} />
         <Route path="/about" element={<About />} />
         <Route path="/logout" element={<Exit />} />
       </Routes>

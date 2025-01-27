@@ -9,13 +9,14 @@ import assetstype from "../assets/card/card_icon/asset_type_new.svg.jpg"
 import card1 from "../assets/card/caed1.jpg"
 import card2 from "../assets/card/card2.jpg"
 import card3 from "../assets/card/card3.jpg"
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Get_in_touch from '../component/get_in_touch';
 import { getUserPortfolioAction } from '../actions/admin.actions';
 
 const Property_portfolio = () => {
   const [key, setKey] = useState("invested");
   const [portfolioListDeta, setPortfolioList] = useState([]);
+  const navigate = useNavigate();
 
 
   const getData = async () => {
@@ -50,11 +51,15 @@ const Property_portfolio = () => {
                     <Col lg={4} md={6} sm={12} xs={12} className='g-3' >
                       <Row>
                         <Col lg={12} className="cardContainer">
-                          <Card.Img variant="top" src={card1} className="cardImg p-3" />
+                          <Card.Img variant="top" src={card1} className="cardImg p-3" onClick={() => {
+                            navigate('/investmentdetails', { state: property });
+                          }} />
                           <span className="btn21"><FontAwesomeIcon icon={faLocationDot} style={{ "color": "blue" }} />{property?.propertyDocs?.[0]?.location}</span>
                         </Col>
                       </Row>
-                      <Card className='p-2 cardBody'>
+                      <Card className='p-2 cardBody' onClick={() => {
+                        navigate('/investmentdetails', { state: property });
+                      }}>
                         <Card.Body className=''>
                           <Card.Title>{propertyName}</Card.Title>
                           <Row>

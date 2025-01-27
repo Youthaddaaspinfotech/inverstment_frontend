@@ -44,7 +44,7 @@ const PopupForm = () => {
                 name: fullName,
                 mobile: mobileNumber
             };
-            localStorage.setItem('userData', JSON.stringify(userData));
+            localStorage.setItem('userData', JSON.stringify(resp.data));
 
             setShowPopup(false);
         }
