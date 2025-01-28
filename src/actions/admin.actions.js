@@ -94,3 +94,7 @@ export const _deleteAction = (data) => {
 }
 
 
+export const getbyUserPortfolioPaidIntTransactionPaymentAction = (data) => {
+    return postRequest('getbyUserPortfolioPaidIntTransactionPayment', data).then(res => { return res.data });
+}
+

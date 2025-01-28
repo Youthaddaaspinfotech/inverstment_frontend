@@ -1,13 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { getbyUserPortfolioPaidIntTransactionPaymentAction } from '../actions/admin.actions';
 
 const InvestmentDetails = () => {
     const location = useLocation();
     const data = location.state; // Assumes the data is passed via `state` in `useLocation`
+    const [monthlyIntData, setMonthlyIntData] = useState([]);
+
+
+    const getData = async () => {
+        let resp = await getbyUserPortfolioPaidIntTransactionPaymentAction({ portfolioId: data.portfolioId, userId: data.userId, paymentStatus: 'Paid' });
+        if (resp.code === 200) {
+            setMonthlyIntData(resp.data)
+        }
+    }
+
+    useEffect(() => {
+        getData();
+    }, []);
 
     if (!data) {
         return <p>No data available!</p>;
     }
+
 
     return (
         <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
@@ -55,16 +70,20 @@ const InvestmentDetails = () => {
                         <td style={styles.td}>{data.receivedStatus}</td>
                     </tr>
                     <tr>
+                        <th style={styles.th}> Total Interest Paid</th>
+                        <td style={styles.td}>₹{data.totalInterestPaid?.toFixed(2) || "0.00"}</td>
+                    </tr>
+                    <tr>
                         <th style={styles.th}>Widthdraw</th>
-                        <td style={styles.td}><button className='lockedBtn' disabled style={{cursor:""}}>Tenure Not completed</button></td>
+                        <td style={styles.td}><button className='lockedBtn' disabled style={{ cursor: "" }}>Tenure Not completed</button></td>
                     </tr>
                     <tr>
                         <th style={styles.th}>Monthly Interest Credit</th>
                         <td style={styles.td}>
-                            {data?.monthlyInvestment?.length > 0 ? (
-                                data.monthlyInvestment.map((v, i) => (
+                            {monthlyIntData?.length > 0 ? (
+                                monthlyIntData.map((v, i) => (
                                     <div key={v._id} style={{ marginBottom: '8px' }}>
-                                        <strong>Date:</strong> {new Date(v.dates).toLocaleDateString('en-GB')} <br />
+                                        <strong>Date:</strong> {new Date(v.date).toLocaleDateString('en-GB')} <br />
                                         <strong>Interest Amount:</strong> ₹{v.interestAmount.toFixed(2)}
                                     </div>
                                 ))
